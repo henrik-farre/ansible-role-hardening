@@ -38,7 +38,7 @@
   tags:
     - apt
     - security
-    -apt-conf
+    - apt-conf
 
 - name: configure dpkg noexec
   become: 'yes'
