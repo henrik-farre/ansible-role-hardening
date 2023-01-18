@@ -20,6 +20,7 @@
   tags:
     - apt
     - security
+    - apt-conf
 
 - name: configure dpkg noexec
   become: 'yes'
@@ -37,6 +38,7 @@
   tags:
     - apt
     - security
+    -apt-conf
 
 - name: configure dpkg noexec
   become: 'yes'
