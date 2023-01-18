@@ -57,7 +57,7 @@
     - apt
     - security
     - vartmp
-
+    - apt-conf
 
 - name: reboot if required
   become: 'yes'
