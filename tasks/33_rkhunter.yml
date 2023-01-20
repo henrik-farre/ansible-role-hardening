@@ -17,6 +17,42 @@
     - rkhunter
     - security
 
+- name: rkhunter alter egrep path
+  become: 'yes'
+  become_method: sudo
+  lineinfile:
+    regexp: "SCRIPTWHITELIST=/usr/bin/egrep"
+    line: "SCRIPTWHITELIST=/bin/egrep"
+    dest: /etc/rkhunter.conf
+    mode: 0640
+    state: present
+    create: 'no'
+    backrefs: 'yes'
+  notify:
+    - rkhunter propupd
+  tags:
+    - packages
+    - rkhunter
+    - security
+
+- name: rkhunter alter fgrep path
+  become: 'yes'
+  become_method: sudo
+  lineinfile:
+    regexp: "SCRIPTWHITELIST=/usr/bin/fgrep"
+    line: "SCRIPTWHITELIST=/bin/fgrep"
+    dest: /etc/rkhunter.conf
+    mode: 0640
+    state: present
+    create: 'no'
+    backrefs: 'yes'
+  notify:
+    - rkhunter propupd
+  tags:
+    - packages
+    - rkhunter
+    - security
+
 - name: rkhunter ssh root user
   become: 'yes'
   become_method: sudo
